@@ -47,9 +47,9 @@ ull H[8] = {
 void block(uc data[128]) {
 	ull w[80] = { 0 };//将1024bit转换为16个64bit的无符号整数
 	//转换:
-	for (int t = 0, j = 0; t < 16; t++, j += 8) w[t] = (ull)((ull(((ull)data[j]) << 56ull)) | (ull(((ull)data[j + 1]) << 48ull)) |
+	for (int t = 0, j = 0; t < 16; t++, j += 8) w[t] = (ull(((ull)data[j]) << 56ull)) | (ull(((ull)data[j + 1]) << 48ull)) |
 	(ull(((ull)data[j + 2]) << 40ull)) | (ull(((ull)data[j + 3]) << 32ull)) | (ull(((ull)data[j + 4]) << 24ull)) |
-	(ull(((ull)data[j + 5]) << 16ull)) | (ull(((ull)data[j + 6]) << 8ull)) | (ull((ull)data[j + 7])));
+	(ull(((ull)data[j + 5]) << 16ull)) | (ull(((ull)data[j + 6]) << 8ull)) | (ull((ull)data[j + 7]));
 	//扩充:
 	for (int t = 16; t < 80; t++) w[t] = o1(w[t - 2]) + w[t - 7] + o0(w[t - 15]) + w[t - 16];
 	ull a = H[0];

@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ui unsigned int
-#define ull unsigned long long
-#define uc unsigned char
+typedef unsigned int ui;
+typedef unsigned long long ull;
+typedef unsigned char uc;
 
 void block(uc data[128]);
 void sha512(const char* FileName, uc* out);
