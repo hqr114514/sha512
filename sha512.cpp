@@ -1,4 +1,4 @@
-﻿#include "sha512.h"
+#include "sha512.h"
 
 #define S(x,y) ((((ull)x)>>(y))|((ull)x)<<(64-(y)))
 #define swap64(x) ((x >> 56) | ((x >> 40) & 0xff00ull) | ((x >> 24) & 0xff0000ull) | ((x >> 8) & 0xff000000ull) | ((x << 8) & 0xff00000000ull) | ((x << 24) & 0xff0000000000ull) | ((x << 40) & 0xff000000000000ull) | (x << 56))
@@ -111,7 +111,7 @@ void sha512(const char* FileName, uc* out) {
 	}
 	
 	for (int i = 0; i < 8; i++) {//16byte(128bit) length information
-		data[120 + i] = (siz * 8) >> ((8 - i - 1) * 8);
+		data[120 + i] = (siz * 8) >> ((7 - i) * 8);
 	}
 	/*cout << "size:" << siz * 8 << endl;
 	for (int i = 0; i < 128; i++) {
