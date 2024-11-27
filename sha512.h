@@ -5,5 +5,5 @@ using namespace std;
 #define ull unsigned long long
 #define uc unsigned char
 
-void block(uc data[64]);
+void block(uc data[128]);
 void sha512(const char* FileName, uc* out);
